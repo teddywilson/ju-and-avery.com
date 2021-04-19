@@ -62,7 +62,11 @@ const Index = () => {
           <Rsvp isMobile={isMobile} />
         </div>
       )}
-      <img alt={`Registry`} style={{ width: "160px" }} src={Registry} />
+      <img
+        alt={`Registry`}
+        style={{ width: "152px", margin: "8px" }}
+        src={Registry}
+      />
     </div>
   );
 };
