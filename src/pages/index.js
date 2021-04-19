@@ -5,7 +5,7 @@ import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
 import RsvpDesktop from "../assets/rsvp-desktop.jpg";
 import RsvpMobile from "../assets/rsvp-mobile.png";
-import { isMobile } from "react-device-detect";
+import useDeviceDetect from "../utils/useDeviceDetect";
 
 const MOBILE_POLAROID_IMAGE = {
   maxWidth: "75%",
@@ -18,7 +18,7 @@ const DESKTOP_POLAROID_IMAGE = {
 };
 
 export default () => {
-  const [mobile] = useState(isMobile);
+  const { isMobile } = useDeviceDetect();
 
   return (
     <div className="body">
@@ -28,7 +28,7 @@ export default () => {
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
       <img style={{ width: "160px" }} src={Header} />
-      {mobile ? (
+      {isMobile ? (
         <div
           style={{
             display: "flex",
