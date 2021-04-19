@@ -1,25 +1,20 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import Carrboro from "../assets/floripa.jpg";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
-import RsvpDesktop from "../assets/rsvp-desktop.jpg";
-import RsvpMobile from "../assets/rsvp-mobile.png";
+
+import Polaroid from "../components/polaroid";
+import Rsvp from "../components/rsvp";
+
 import useDeviceDetect from "../utils/useDeviceDetect";
 
-const MOBILE_POLAROID_IMAGE = {
-  maxWidth: "75%",
-  margin: "8px",
-};
-
-const DESKTOP_POLAROID_IMAGE = {
-  maxWidth: "25%",
-  margin: "16px",
-};
+const URL_FORM_CARRBORO = "https://www.google.com";
+const URL_FORM_FLORIPA = "https://www.facebook.com";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
-
   return (
     <div className="body">
       <Helmet>
@@ -27,7 +22,7 @@ const Index = () => {
         <title>Ju and Avery</title>
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
-      <img style={{ width: "160px" }} src={Header} />
+      <img alt={`Site header`} style={{ width: "160px" }} src={Header} />
       {isMobile ? (
         <div
           style={{
@@ -37,33 +32,33 @@ const Index = () => {
             alignContent: "center",
           }}
         >
-          <div>
-            <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
-          </div>
-          <div>
-            <img
-              style={{
-                width: "96px",
-              }}
-              src={RsvpMobile}
-            />
-          </div>
-          <div>
-            <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
-          </div>
+          <Polaroid
+            isMobile={isMobile}
+            source={Carrboro}
+            url={URL_FORM_CARRBORO}
+          />
+          <Rsvp isMobile={isMobile} />
+          <Polaroid
+            isMobile={isMobile}
+            source={Floripa}
+            url={URL_FORM_FLORIPA}
+          />
         </div>
       ) : (
         <div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
-            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
+            <Polaroid
+              isMobile={isMobile}
+              source={Carrboro}
+              url={URL_FORM_CARRBORO}
+            />
+            <Polaroid
+              isMobile={isMobile}
+              source={Floripa}
+              url={URL_FORM_FLORIPA}
+            />
           </div>
-          <img
-            style={{
-              height: "96px",
-            }}
-            src={RsvpDesktop}
-          />
+          <Rsvp isMobile={isMobile} />
         </div>
       )}
       {/* Remove after animation created */}
