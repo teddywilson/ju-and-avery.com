@@ -5,15 +5,15 @@ const STYLE = {
   cursor: "pointer",
 };
 
-const MOBILE_POLAROID_IMAGE = {
+const MOBILE_POLAROID_STYLE = {
   ...STYLE,
-  maxWidth: "75%",
+  width: "75%",
   margin: "8px",
 };
 
-const DESKTOP_POLAROID_IMAGE = {
+const DESKTOP_POLAROID_STYLE = {
   ...STYLE,
-  maxWidth: "25%",
+  width: "25%",
   margin: "16px",
 };
 
@@ -29,7 +29,7 @@ const Polaroid = ({ isMobile, source, url, emoji, emojiOnTop }) => {
   );
   return (
     <div
-      style={isMobile ? MOBILE_POLAROID_IMAGE : DESKTOP_POLAROID_IMAGE}
+      style={isMobile ? MOBILE_POLAROID_STYLE : DESKTOP_POLAROID_STYLE}
       onClick={() => {
         window.open(url);
       }}
