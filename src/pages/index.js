@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 
 import Carrboro from "../assets/carrboro.jpg";
@@ -16,10 +16,6 @@ const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
-  const [didMount, setDidMount] = useState(false);
-  useEffect(() => {
-    setDidMount(true);
-  }, []);
   const floripaPolaroid = (
     <Polaroid
       isMobile={isMobile}
