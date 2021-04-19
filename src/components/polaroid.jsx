@@ -30,7 +30,7 @@ const Polaroid = ({ isMobile, source, url, emoji }) => {
       <div>
         <span
           style={{
-            fontSize: "32px",
+            fontSize: "24px",
           }}
         >
           {emoji}
