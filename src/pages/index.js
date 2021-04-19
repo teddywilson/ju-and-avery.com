@@ -6,12 +6,13 @@ import Header from "../assets/header.jpg";
 import Rsvp from "../assets/rsvp.jpg";
 import { isMobile } from "react-device-detect";
 
-const MOBILE_IMAGE = {
-  maxWidth: "100%",
+const MOBILE_POLAROID_IMAGE = {
+  maxWidth: "75%",
+  margin: "8px",
 };
 
-const DESKTOP_IMAGE = {
-  maxWidth: "35%",
+const DESKTOP_POLAROID_IMAGE = {
+  maxWidth: "25%",
   margin: "16px",
 };
 
@@ -23,30 +24,36 @@ export default () => {
         <title>Ju and Avery</title>
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <img src={Header} />
-        {isMobile ? (
-          <div className="mobile-container">
-            <img src={Floripa} />
-            <img src={Rsvp} />
-            <img src={Floripa} />
+      <img style={{ width: "160px" }} src={Header} />
+      {isMobile ? (
+        <div className="mobile-container">
+          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+          <img
+            style={{
+              width: "96px",
+            }}
+            src={Rsvp}
+          />
+          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+        </div>
+      ) : (
+        <div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
+            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
           </div>
-        ) : (
-          <div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <img style={DESKTOP_IMAGE} src={Floripa} />
-              <img style={DESKTOP_IMAGE} src={Floripa} />
-            </div>
-            <img src={Rsvp} />
-          </div>
-        )}
-        <button type="button">REGISTRY</button>
-      </div>
+          <img
+            style={{
+              height: "96px",
+            }}
+            src={Rsvp}
+          />
+        </div>
+      )}
+      {/* Remove after animation created */}
+      <button style={{ width: "96px" }} type="button">
+        REGISTRY
+      </button>
     </div>
   );
 };
