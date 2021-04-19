@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Carrboro from "../assets/floripa.jpg";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
+import Registry from "../assets/registry.jpg";
 
 import Polaroid from "../components/polaroid";
 import Rsvp from "../components/rsvp";
@@ -61,10 +62,7 @@ const Index = () => {
           <Rsvp isMobile={isMobile} />
         </div>
       )}
-      {/* Remove after animation created */}
-      <button style={{ width: "96px" }} type="button">
-        REGISTRY
-      </button>
+      <img alt={`Registry`} style={{ width: "160px" }} src={Registry} />
     </div>
   );
 };

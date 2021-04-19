@@ -10,6 +10,7 @@ const Rsvp = ({ isMobile }) => {
         alt={`Pointers indicating where RSVP buttons are`}
         style={{
           width: "96px",
+          cursor: "initial",
         }}
         src={isMobile ? RsvpMobile : RsvpDesktop}
       />
