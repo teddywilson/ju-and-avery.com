@@ -5,6 +5,7 @@ import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
 import Rsvp from "../assets/rsvp.jpg";
 
+// TODO(teddywilson): Flex columns vs row for mobile vs desktop.
 export default () => {
   return (
     <div className="body">
