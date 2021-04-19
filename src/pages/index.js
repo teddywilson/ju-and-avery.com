@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet";
 
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
-import Rsvp from "../assets/rsvp.jpg";
+import RsvpDesktop from "../assets/rsvp-desktop.jpg";
+import RsvpMobile from "../assets/rsvp-mobile.png";
 import { isMobile } from "react-device-detect";
 
 const MOBILE_POLAROID_IMAGE = {
@@ -26,15 +27,28 @@ export default () => {
       </Helmet>
       <img style={{ width: "160px" }} src={Header} />
       {isMobile ? (
-        <div className="mobile-container">
-          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
-          <img
-            style={{
-              width: "96px",
-            }}
-            src={Rsvp}
-          />
-          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
+        >
+          <div>
+            <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+          </div>
+          <div>
+            <img
+              style={{
+                width: "96px",
+              }}
+              src={RsvpMobile}
+            />
+          </div>
+          <div>
+            <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+          </div>
         </div>
       ) : (
         <div>
@@ -46,7 +60,7 @@ export default () => {
             style={{
               height: "96px",
             }}
-            src={Rsvp}
+            src={RsvpDesktop}
           />
         </div>
       )}
