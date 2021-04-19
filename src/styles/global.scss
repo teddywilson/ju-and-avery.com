@@ -2,48 +2,10 @@ body {
   text-align: center;
 }
 
-.image-container {
-  display: flex;
-  justify-content: center;
-}
-
-.image-container > img {
-  max-width: 20%;
-  margin-left: 16px;
-  margin-right: 16px;
-  cursor: pointer;
-}
-
-.rsvp-container {
-  display: flex;
-  justify-content: center;
-}
-
-.rsvp-container * > img {
-  margin: 16px;
-  max-width: 256px;
-  max-height: 80px;
-}
-
-.title-container {
-  display: flex;
-  justify-content: center;
-}
-
-.title-container > img {
-  margin: 16px;
-  max-width: 256px;
-  max-height: 160px;
-}
-
-.text {
-  text-align: center;
-}
-
 button {
   margin-top: 8px;
 }
 
-.img {
+img {
   cursor: pointer;
 }
