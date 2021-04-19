@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 
 import Floripa from "../assets/floripa.jpg";
@@ -17,7 +17,7 @@ const DESKTOP_POLAROID_IMAGE = {
   margin: "16px",
 };
 
-export default () => {
+const Index = () => {
   const { isMobile } = useDeviceDetect();
 
   return (
@@ -73,3 +73,5 @@ export default () => {
     </div>
   );
 };
+
+export default Index;
