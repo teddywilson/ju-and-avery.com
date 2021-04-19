@@ -17,7 +17,15 @@ const DESKTOP_POLAROID_STYLE = {
   margin: "16px",
 };
 
-const Polaroid = ({ isMobile, source, url, emoji, emojiOnTop }) => {
+const Polaroid = ({
+  isMobile,
+  source,
+  url,
+  emoji,
+  emojiOnTop,
+  onHover,
+  dim,
+}) => {
   const emojiSpan = (
     <span
       style={{
@@ -27,11 +35,21 @@ const Polaroid = ({ isMobile, source, url, emoji, emojiOnTop }) => {
       {emoji}
     </span>
   );
+  const style = {
+    ...(isMobile ? MOBILE_POLAROID_STYLE : DESKTOP_POLAROID_STYLE),
+    opacity: dim ? 0.4 : 10.0,
+  };
   return (
     <div
-      style={isMobile ? MOBILE_POLAROID_STYLE : DESKTOP_POLAROID_STYLE}
+      style={style}
       onClick={() => {
         window.open(url);
+      }}
+      onMouseEnter={() => {
+        onHover(true);
+      }}
+      onMouseLeave={() => {
+        onHover(false);
       }}
       role="button"
       tabIndex="0"

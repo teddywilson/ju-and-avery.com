@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 
 import Carrboro from "../assets/carrboro.jpg";
@@ -16,6 +16,8 @@ const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
+  const [isCarrboroHovering, setIsCarrboroHovering] = useState(false);
+  const [isFloripaHovering, setIsFloripaHovering] = useState(false);
   const floripaPolaroid = (
     <Polaroid
       isMobile={isMobile}
@@ -23,6 +25,10 @@ const Index = () => {
       url={URL_FORM_CARRBORO}
       emoji={`🇺🇸`}
       emojiOnTop={true}
+      dim={isFloripaHovering}
+      onHover={(isHovering) => {
+        setIsCarrboroHovering(isHovering);
+      }}
     />
   );
   const carrboroPolaroid = (
@@ -32,6 +38,10 @@ const Index = () => {
       url={URL_FORM_FLORIPA}
       emoji={`🇧🇷`}
       emojiOnTop={isMobile ? false : true}
+      dim={isCarrboroHovering}
+      onHover={(isHovering) => {
+        setIsFloripaHovering(isHovering);
+      }}
     />
   );
   const rsvp = <Rsvp isMobile={isMobile} />;
