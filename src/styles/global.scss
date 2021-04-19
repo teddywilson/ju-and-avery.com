@@ -19,7 +19,7 @@ body {
   justify-content: center;
 }
 
-.rsvp-container > img {
+.rsvp-container * > img {
   margin: 16px;
   max-width: 256px;
   max-height: 80px;
@@ -42,4 +42,8 @@ body {
 
 button {
   margin-top: 8px;
+}
+
+.img {
+  cursor: pointer;
 }

@@ -4,8 +4,18 @@ import { Helmet } from "react-helmet";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
 import Rsvp from "../assets/rsvp.jpg";
+import { isMobile } from "react-device-detect";
 
-// TODO(teddywilson): Flex columns vs row for mobile vs desktop.
+const MOBILE_POLAROID_IMAGE = {
+  maxWidth: "75%",
+  margin: "8px",
+};
+
+const DESKTOP_POLAROID_IMAGE = {
+  maxWidth: "25%",
+  margin: "16px",
+};
+
 export default () => {
   return (
     <div className="body">
@@ -14,17 +24,36 @@ export default () => {
         <title>Ju and Avery</title>
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
-      <div className="title-container">
-        <img src={Header} />
-      </div>
-      <div className="image-container">
-        <img id="florpia" src={Floripa} />
-        <img id="carrboro" src={Floripa} />
-      </div>
-      <div className="rsvp-container">
-        <img src={Rsvp} />
-      </div>
-      <button type="button">REGISTRY</button>
+      <img style={{ width: "160px" }} src={Header} />
+      {isMobile ? (
+        <div className="mobile-container">
+          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+          <img
+            style={{
+              width: "96px",
+            }}
+            src={Rsvp}
+          />
+          <img style={MOBILE_POLAROID_IMAGE} src={Floripa} />
+        </div>
+      ) : (
+        <div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
+            <img style={DESKTOP_POLAROID_IMAGE} src={Floripa} />
+          </div>
+          <img
+            style={{
+              height: "96px",
+            }}
+            src={Rsvp}
+          />
+        </div>
+      )}
+      {/* Remove after animation created */}
+      <button style={{ width: "96px" }} type="button">
+        REGISTRY
+      </button>
     </div>
   );
 };
