@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 
 import Floripa from "../assets/floripa.jpg";
