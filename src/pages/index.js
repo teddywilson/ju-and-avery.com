@@ -11,7 +11,7 @@ import Rsvp from "../components/rsvp";
 import useDeviceDetect from "../utils/useDeviceDetect";
 
 const URL_FORM_CARRBORO = "https://forms.gle/Ya5JDggD7w8ghhCV7";
-const URL_FORM_FLORIPA = "https://forms.gle/Ya5JDggD7w8ghhCV7";
+const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
