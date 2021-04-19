@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 import Floripa from "../assets/floripa.jpg";
@@ -18,6 +18,8 @@ const DESKTOP_POLAROID_IMAGE = {
 };
 
 export default () => {
+  const [mobile] = useState(isMobile);
+
   return (
     <div className="body">
       <Helmet>
@@ -26,7 +28,7 @@ export default () => {
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
       <img style={{ width: "160px" }} src={Header} />
-      {isMobile ? (
+      {mobile ? (
         <div
           style={{
             display: "flex",
