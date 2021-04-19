@@ -22,6 +22,7 @@ const Index = () => {
       source={Carrboro}
       url={URL_FORM_CARRBORO}
       emoji={`🇺🇸`}
+      emojiOnTop={true}
     />
   );
   const carrboroPolaroid = (
@@ -30,6 +31,7 @@ const Index = () => {
       source={Floripa}
       url={URL_FORM_FLORIPA}
       emoji={`🇧🇷`}
+      emojiOnTop={isMobile ? false : true}
     />
   );
   const rsvp = <Rsvp isMobile={isMobile} />;

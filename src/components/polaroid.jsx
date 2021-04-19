@@ -17,7 +17,7 @@ const DESKTOP_POLAROID_IMAGE = {
   margin: "16px",
 };
 
-const Polaroid = ({ isMobile, source, url, emoji }) => {
+const Polaroid = ({ isMobile, source, url, emoji, emojiOnTop }) => {
   const emojiSpan = (
     <span
       style={{
@@ -36,13 +36,13 @@ const Polaroid = ({ isMobile, source, url, emoji }) => {
       role="button"
       tabIndex="0"
     >
-      <div hidden={isMobile}>{emojiSpan}</div>
+      <div hidden={!emojiOnTop}>{emojiSpan}</div>
       <img
         alt={`Polaroid button for ${url}`}
         src={source}
         style={{ width: "100%" }}
       />
-      <div hidden={!isMobile}>{emojiSpan}</div>
+      <div hidden={emojiOnTop}>{emojiSpan}</div>
     </div>
   );
 };
