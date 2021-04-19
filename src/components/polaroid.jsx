@@ -17,19 +17,25 @@ const DESKTOP_POLAROID_IMAGE = {
   margin: "16px",
 };
 
-const Polaroid = ({ isMobile, source, url }) => {
+const Polaroid = ({ isMobile, source, url, emoji }) => {
   return (
     <div
       style={isMobile ? MOBILE_POLAROID_IMAGE : DESKTOP_POLAROID_IMAGE}
       onClick={() => {
         window.open(url);
       }}
-      onKeyDown={() => {
-        window.open(url);
-      }}
       role="button"
       tabIndex="0"
     >
+      <div>
+        <span
+          style={{
+            fontSize: "32px",
+          }}
+        >
+          {emoji}
+        </span>
+      </div>
       <img
         alt={`Polaroid button for ${url}`}
         src={source}

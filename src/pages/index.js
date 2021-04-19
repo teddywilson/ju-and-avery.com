@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-import Carrboro from "../assets/floripa.jpg";
+import Carrboro from "../assets/carrboro.jpg";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
 import Registry from "../assets/registry.jpg";
@@ -16,6 +16,23 @@ const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
+  const floripaPolaroid = (
+    <Polaroid
+      isMobile={isMobile}
+      source={Carrboro}
+      url={URL_FORM_CARRBORO}
+      emoji={`🇺🇸`}
+    />
+  );
+  const carrboroPolaroid = (
+    <Polaroid
+      isMobile={isMobile}
+      source={Floripa}
+      url={URL_FORM_FLORIPA}
+      emoji={`🇧🇷`}
+    />
+  );
+  const rsvp = <Rsvp isMobile={isMobile} />;
   return (
     <div className="body">
       <Helmet>
@@ -33,33 +50,17 @@ const Index = () => {
             alignContent: "center",
           }}
         >
-          <Polaroid
-            isMobile={isMobile}
-            source={Carrboro}
-            url={URL_FORM_CARRBORO}
-          />
-          <Rsvp isMobile={isMobile} />
-          <Polaroid
-            isMobile={isMobile}
-            source={Floripa}
-            url={URL_FORM_FLORIPA}
-          />
+          {floripaPolaroid}
+          {rsvp}
+          {carrboroPolaroid}
         </div>
       ) : (
         <div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Polaroid
-              isMobile={isMobile}
-              source={Carrboro}
-              url={URL_FORM_CARRBORO}
-            />
-            <Polaroid
-              isMobile={isMobile}
-              source={Floripa}
-              url={URL_FORM_FLORIPA}
-            />
+            {floripaPolaroid}
+            {carrboroPolaroid}
           </div>
-          <Rsvp isMobile={isMobile} />
+          {rsvp}
         </div>
       )}
       <img
