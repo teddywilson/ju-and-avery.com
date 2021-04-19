@@ -4,8 +4,17 @@ import { Helmet } from "react-helmet";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
 import Rsvp from "../assets/rsvp.jpg";
+import { isMobile } from "react-device-detect";
 
-// TODO(teddywilson): Flex columns vs row for mobile vs desktop.
+const MOBILE_IMAGE = {
+  maxWidth: "100%",
+};
+
+const DESKTOP_IMAGE = {
+  maxWidth: "35%",
+  margin: "16px",
+};
+
 export default () => {
   return (
     <div className="body">
@@ -14,17 +23,30 @@ export default () => {
         <title>Ju and Avery</title>
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
-      <div className="title-container">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <img src={Header} />
+        {isMobile ? (
+          <div className="mobile-container">
+            <img src={Floripa} />
+            <img src={Rsvp} />
+            <img src={Floripa} />
+          </div>
+        ) : (
+          <div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img style={DESKTOP_IMAGE} src={Floripa} />
+              <img style={DESKTOP_IMAGE} src={Floripa} />
+            </div>
+            <img src={Rsvp} />
+          </div>
+        )}
+        <button type="button">REGISTRY</button>
       </div>
-      <div className="image-container">
-        <img id="florpia" src={Floripa} />
-        <img id="carrboro" src={Floripa} />
-      </div>
-      <div className="rsvp-container">
-        <img src={Rsvp} />
-      </div>
-      <button type="button">REGISTRY</button>
     </div>
   );
 };
