@@ -17,8 +17,8 @@ const DESKTOP_STYLE = {
   margin: "16px",
 };
 
-OPACITY_DIM = 0.4;
-OPACITY_REGULAR = 1.0;
+const OPACITY_DIM = 0.4;
+const OPACITY_REGULAR = 1.0;
 
 const Polaroid = ({
   isMobile,
