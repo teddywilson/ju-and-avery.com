@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Carrboro from "../assets/carrboro.jpg";
 import Floripa from "../assets/floripa.jpg";
 import Header from "../assets/header.jpg";
-import Registry from "../assets/registry.jpg";
+import Registry from "../assets/registry-animated.gif";
 
 import Polaroid from "../components/polaroid";
 import Rsvp from "../components/rsvp";
