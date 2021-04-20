@@ -5,17 +5,20 @@ const STYLE = {
   cursor: "pointer",
 };
 
-const MOBILE_POLAROID_STYLE = {
+const MOBILE_STYLE = {
   ...STYLE,
   width: "75%",
   margin: "8px",
 };
 
-const DESKTOP_POLAROID_STYLE = {
+const DESKTOP_STYLE = {
   ...STYLE,
   width: "25%",
   margin: "16px",
 };
+
+OPACITY_DIM = 0.4;
+OPACITY_REGULAR = 1.0;
 
 const Polaroid = ({
   isMobile,
@@ -36,8 +39,8 @@ const Polaroid = ({
     </span>
   );
   const style = {
-    ...(isMobile ? MOBILE_POLAROID_STYLE : DESKTOP_POLAROID_STYLE),
-    opacity: dim ? 0.4 : 10.0,
+    ...(isMobile ? MOBILE_STYLE : DESKTOP_STYLE),
+    opacity: dim ? OPACITY_DIM : OPACITY_REGULAR,
   };
   return (
     <div

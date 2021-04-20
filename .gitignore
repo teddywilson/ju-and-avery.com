@@ -1,9 +1,13 @@
-yarn-debug.log*
-yarn-error.log*
-
-node_modules/
-
+# Gatsby
 .cache/
 public
 
+# NPM
+node_modules/
+
+# VSCode
 .DS_Store
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*

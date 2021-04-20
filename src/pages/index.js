@@ -9,7 +9,7 @@ import Registry from "../assets/registry.jpg";
 import Polaroid from "../components/polaroid";
 import Rsvp from "../components/rsvp";
 
-import useDeviceDetect from "../utils/useDeviceDetect";
+import useDeviceDetect from "../hooks/useDeviceDetect";
 
 const URL_FORM_CARRBORO = "https://forms.gle/Ya5JDggD7w8ghhCV7";
 const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
@@ -18,7 +18,7 @@ const Index = () => {
   const { isMobile } = useDeviceDetect();
   const [isCarrboroHovering, setIsCarrboroHovering] = useState(false);
   const [isFloripaHovering, setIsFloripaHovering] = useState(false);
-  const floripaPolaroid = (
+  const carrboroPolaroid = (
     <Polaroid
       isMobile={isMobile}
       source={Carrboro}
@@ -31,7 +31,7 @@ const Index = () => {
       }}
     />
   );
-  const carrboroPolaroid = (
+  const floripaPolaroid = (
     <Polaroid
       isMobile={isMobile}
       source={Floripa}
@@ -53,6 +53,8 @@ const Index = () => {
         <link rel="canonical" href="http://juandavery.com" />
       </Helmet>
       <img alt={`Site header`} style={{ height: "136px" }} src={Header} />
+      {/* On mobile, put polaroid buttons in a single column; on desktop,
+          put the buttons side by side. */}
       {isMobile ? (
         <div
           style={{
@@ -62,15 +64,15 @@ const Index = () => {
             alignContent: "center",
           }}
         >
-          {floripaPolaroid}
-          {rsvp}
           {carrboroPolaroid}
+          {rsvp}
+          {floripaPolaroid}
         </div>
       ) : (
         <div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            {floripaPolaroid}
             {carrboroPolaroid}
+            {floripaPolaroid}
           </div>
           {rsvp}
         </div>
