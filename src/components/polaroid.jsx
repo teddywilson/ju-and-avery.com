@@ -44,6 +44,7 @@ const Polaroid = ({
   };
   return (
     <div
+      className="button-no-outline"
       style={style}
       onClick={() => {
         window.open(url);

@@ -5,7 +5,7 @@ import RsvpMobile from "../assets/rsvp-mobile.png";
 
 const Rsvp = ({ isMobile }) => {
   return (
-    <div>
+    <div className="button-no-outline">
       <img
         alt={`Pointers indicating where RSVP buttons are`}
         style={{

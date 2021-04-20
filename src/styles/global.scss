@@ -11,6 +11,10 @@ img {
   cursor: pointer;
 }
 
+.button-no-outline:focus {
+  outline: none;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
