@@ -11,6 +11,13 @@ img {
   cursor: pointer;
 }
 
+.button-no-outline {
+  transition: opacity 0.25s ease-out;
+  -moz-transition: opacity 0.25s ease-out;
+  -webkit-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+}
+
 .button-no-outline:focus {
   outline: none;
 }
