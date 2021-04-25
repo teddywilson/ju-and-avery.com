@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 import Carrboro from "../assets/carrboro.jpg";
 import Floripa from "../assets/floripa.jpg";
-import Header from "../assets/header.jpg";
+import Header from "../assets/header-animated-1.gif";
 import Registry from "../assets/registry-animated.gif";
 
 import Polaroid from "../components/polaroid";

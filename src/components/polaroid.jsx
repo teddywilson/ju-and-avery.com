@@ -58,13 +58,13 @@ const Polaroid = ({
       role="button"
       tabIndex="0"
     >
-      <div hidden={!emojiOnTop}>{emojiSpan}</div>
+      {/* <div hidden={!emojiOnTop}>{emojiSpan}</div> */}
       <img
         alt={`Polaroid button for ${url}`}
         src={source}
         style={{ width: "100%" }}
       />
-      <div hidden={emojiOnTop}>{emojiSpan}</div>
+      {/* <div hidden={emojiOnTop}>{emojiSpan}</div> */}
     </div>
   );
 };
