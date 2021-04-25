@@ -23,6 +23,7 @@ const Index = () => {
       isMobile={isMobile}
       source={Carrboro}
       url={URL_FORM_CARRBORO}
+      // Dim when hovered on Floripa polaroid.
       dim={isFloripaHovering}
       onHover={(isHovering) => {
         setIsCarrboroHovering(isHovering);
@@ -34,6 +35,7 @@ const Index = () => {
       isMobile={isMobile}
       source={Floripa}
       url={URL_FORM_FLORIPA}
+      // Dim when hovered on Carrboro polaroid.
       dim={isCarrboroHovering}
       onHover={(isHovering) => {
         setIsFloripaHovering(isHovering);
