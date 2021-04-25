@@ -79,7 +79,7 @@ const Index = () => {
       )}
       <img
         alt={`Registry`}
-        style={{ width: "152px", margin: "8px" }}
+        style={{ width: "152px", margin: "8px", cursor: "pointer" }}
         src={Registry}
       />
     </div>
