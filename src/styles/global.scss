@@ -1,17 +1,17 @@
 body {
   text-align: center;
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   animation: fadein 2s;
 }
 
 .button-no-outline {
   transition: opacity 0.25s ease-out;
-  -moz-transition: opacity 0.25s ease-out;
-  -webkit-transition: opacity 0.25s ease-out;
-  -o-transition: opacity 0.25s ease-out;
+  -moz-transition: opacity 0.25s ease-out; /* Firefox < 16 */
+  -o-transition: opacity 0.25s ease-out; /* Opera < 12.1 */
+  -webkit-transition: opacity 0.25s ease-out; /* Safari, Chrome and Opera > 12.1 */
 }
 
 .button-no-outline:focus {
