@@ -13,6 +13,7 @@ import useDeviceDetect from "../hooks/useDeviceDetect";
 
 const URL_FORM_CARRBORO = "https://forms.gle/Ya5JDggD7w8ghhCV7";
 const URL_FORM_FLORIPA = "https://forms.gle/yxkW6CJ58p2sw3yW7";
+const URL_REGISTRY = "https://zola.com/registry/juandavery";
 
 const Index = () => {
   const { isMobile } = useDeviceDetect();
@@ -81,7 +82,7 @@ const Index = () => {
         style={{ width: "152px", margin: "8px", cursor: "pointer" }}
         src={Registry}
         onClick={() => {
-          window.open(`https://zola.com/registry/juandavery`);
+          window.open(URL_REGISTRY);
         }}
       />
     </div>
