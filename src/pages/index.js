@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 
 import Carrboro from "../assets/carrboro.jpg";
 import Floripa from "../assets/floripa.jpg";
-import Header from "../assets/header-animated-1.gif";
-import Registry from "../assets/registry-animated.gif";
+import Header from "../assets/header.gif";
+import Registry from "../assets/registry.gif";
 
 import Polaroid from "../components/polaroid";
 import Rsvp from "../components/rsvp";
@@ -23,8 +23,6 @@ const Index = () => {
       isMobile={isMobile}
       source={Carrboro}
       url={URL_FORM_CARRBORO}
-      emoji={`🇺🇸`}
-      emojiOnTop={true}
       dim={isFloripaHovering}
       onHover={(isHovering) => {
         setIsCarrboroHovering(isHovering);
@@ -36,8 +34,6 @@ const Index = () => {
       isMobile={isMobile}
       source={Floripa}
       url={URL_FORM_FLORIPA}
-      emoji={`🇧🇷`}
-      emojiOnTop={isMobile ? false : true}
       dim={isCarrboroHovering}
       onHover={(isHovering) => {
         setIsFloripaHovering(isHovering);
@@ -78,9 +74,13 @@ const Index = () => {
         </div>
       )}
       <img
+        className="button-no-outline"
         alt={`Registry`}
         style={{ width: "152px", margin: "8px", cursor: "pointer" }}
         src={Registry}
+        onClick={() => {
+          window.open(`https://zola.com/registry/juandavery`);
+        }}
       />
     </div>
   );

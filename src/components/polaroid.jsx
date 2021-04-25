@@ -20,24 +20,7 @@ const DESKTOP_STYLE = {
 const OPACITY_DIM = 0.4;
 const OPACITY_REGULAR = 1.0;
 
-const Polaroid = ({
-  isMobile,
-  source,
-  url,
-  emoji,
-  emojiOnTop,
-  onHover,
-  dim,
-}) => {
-  const emojiSpan = (
-    <span
-      style={{
-        fontSize: "24px",
-      }}
-    >
-      {emoji}
-    </span>
-  );
+const Polaroid = ({ isMobile, source, url, onHover, dim }) => {
   const style = {
     ...(isMobile ? MOBILE_STYLE : DESKTOP_STYLE),
     opacity: dim ? OPACITY_DIM : OPACITY_REGULAR,
@@ -58,13 +41,11 @@ const Polaroid = ({
       role="button"
       tabIndex="0"
     >
-      {/* <div hidden={!emojiOnTop}>{emojiSpan}</div> */}
       <img
         alt={`Polaroid button for ${url}`}
         src={source}
         style={{ width: "100%" }}
       />
-      {/* <div hidden={emojiOnTop}>{emojiSpan}</div> */}
     </div>
   );
 };
