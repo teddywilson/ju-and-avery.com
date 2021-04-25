@@ -1,0 +1,2 @@
+(self.webpackChunkwww_juandavery_com=self.webpackChunkwww_juandavery_com||[]).push([[883],{9616:function(e,u,n){"use strict";n.r(u);var a=n(7294),t=n(9138);u.default=function(){return a.createElement(t.default,null)}}}]);
+//# sourceMappingURL=component---src-pages-404-js-1e4b06e9d8c58ee5abef.js.map

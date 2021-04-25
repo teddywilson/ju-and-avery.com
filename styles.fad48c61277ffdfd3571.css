@@ -1,0 +1,1 @@
+body{text-align:center;animation:fadein 2s}.button-no-outline{transition:opacity .25s ease-out;-moz-transition:opacity .25s ease-out;-o-transition:opacity .25s ease-out;-webkit-transition:opacity .25s ease-out}.button-no-outline:focus{outline:none}@keyframes fadein{0%{opacity:0}to{opacity:1}}
